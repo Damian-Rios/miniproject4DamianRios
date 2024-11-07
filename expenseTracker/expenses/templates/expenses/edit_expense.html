@@ -1,22 +1,30 @@
 {% extends 'expenses/base.html' %}
 
 {% block content %}
-<h2>Edit Expense</h2>
-<form method="post" action="{% url 'edit_expense' expense_id=expense.id %}">
+<h2 class="mb-4">Edit Expense</h2>
+<form method="post" action="{% url 'expenses:edit_expense' expense_id=expense.id %}">
     {% csrf_token %}
-    
-    <label for="amount">Amount:</label>
-    <input type="number" step="0.01" name="amount" id="amount" value="{{ expense.amount }}" required>
-    
-    <label for="category">Category:</label>
-    <input type="text" name="category" id="category" value="{{ expense.category }}" required>
-    
-    <label for="description">Description:</label>
-    <textarea name="description" id="description">{{ expense.description }}</textarea>
-    
-    <label for="date">Date:</label>
-    <input type="date" name="date" id="date" value="{{ expense.date }}" required>
-    
+
+    <div class="mb-3">
+        <label for="amount" class="form-label">Amount:</label>
+        <input type="number" step="0.01" name="amount" id="amount" class="form-control" value="{{ expense.amount }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="category" class="form-label">Category:</label>
+        <input type="text" name="category" id="category" class="form-control" value="{{ expense.category }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea name="description" id="description" class="form-control">{{ expense.description }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input type="date" name="date" id="date" class="form-control" value="{{ expense.date }}" required>
+    </div>
+
     <button type="submit" class="btn btn-primary">Update Expense</button>
 </form>
 {% endblock %}

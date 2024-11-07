@@ -5,6 +5,12 @@ class Expense(models.Model):
     CATEGORY_CHOICES = [
         ('Groceries', 'Groceries'),
         ('Utilities', 'Utilities'),
+        ('Rent/Mortgage', 'Rent/Mortgage'),
+        ('Debt', 'Debt'),
+        ('Healthcare', 'Healthcare'),
+        ('Insurance', 'Insurance'),
+        ('Savings', 'Savings'),
+        ('Necessities', 'Necessities'),
         ('Entertainment', 'Entertainment'),
         ('Other', 'Other'),
     ]
