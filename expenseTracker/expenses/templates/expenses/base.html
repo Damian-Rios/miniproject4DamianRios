@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Expense Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container">
+        <header class="py-3">
+            <nav>
+                <a href="{% url 'expenses:index' %}">Home</a> |
+                <a href="{% url 'expenses:add_expense' %}">Add Expense</a>
+            </nav>
+        </header>
 
+        <main>
+            {% block content %}
+            <!-- Page content will go here -->
+            {% endblock %}
+        </main>
+
+        <footer class="py-3">
+            <p>&copy; 2024 Expense Tracker</p>
+        </footer>
+    </div>
 </body>
 </html>
